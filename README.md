@@ -6,9 +6,9 @@ An unofficial project page for distributing and documenting the **Clawcode-Moded
 
 ## Latest release
 
-**Current preview:** [Clawcode-Moded v1.0.0](https://github.com/rajveerjaiswal900-max/clawcode-moded/releases/tag/v1.0.0)
+**Current published preview:** [Clawcode-Moded v1.0.0](https://github.com/rajveerjaiswal900-max/clawcode-moded/releases/tag/v1.0.0)
 
-[**Download the APK**](https://github.com/rajveerjaiswal900-max/clawcode-moded/releases/download/v1.0.0/clawcode-moded-version.apk) · [All releases](https://github.com/rajveerjaiswal900-max/clawcode-moded/releases)
+[**Download the published APK**](https://github.com/rajveerjaiswal900-max/clawcode-moded/releases/download/v1.0.0/clawcode-moded-version.apk) · [All releases](https://github.com/rajveerjaiswal900-max/clawcode-moded/releases)
 
 | Release detail | Value |
 |---|---|
@@ -17,8 +17,15 @@ An unofficial project page for distributing and documenting the **Clawcode-Moded
 | Asset | `clawcode-moded-version.apk` |
 | File size | 26,525,914 bytes (about 25.3 MiB) |
 | SHA-256 | `e7f25289744eae67bd9d0c5b62bd3a7de24b8e45283ce8e280411c2ef8e9dd4a` |
+| Package name in published asset | `gptos.intelligence.assistant` |
 
-Use the SHA-256 value above to verify that your download matches the release asset. A matching checksum confirms file integrity against this published value; it does **not** by itself prove that the APK is safe.
+Use the SHA-256 value above to verify that your download matches the currently published release asset. A matching checksum confirms file integrity against this published value; it does **not** by itself prove that the APK is safe.
+
+## Nexora package rename status
+
+The requested package name is `com.nexora.ai`. A locally prepared candidate APK is not yet published as a GitHub release asset. The published `v1.0.0` APK above remains unchanged and still uses `gptos.intelligence.assistant`. Do not treat the current release download as the renamed Nexora build.
+
+Before publishing a replacement, the candidate needs verification of its manifest package name, Android APK Signature Scheme v2 or later signing, and installation/runtime testing. Keep the signing keystore private and backed up securely; never commit it to this repository. The current GitHub integration can update repository text files but cannot upload a binary release asset, so the candidate APK still needs to be uploaded through GitHub Releases before the download link can be changed.
 
 ## Windows PC version
 
@@ -48,7 +55,7 @@ This is an initial preview release. Bugs, incomplete behavior, or device-specifi
 
 ## Links
 
-- [Download current Android preview](https://github.com/rajveerjaiswal900-max/clawcode-moded/releases/tag/v1.0.0)
+- [Download current published Android preview](https://github.com/rajveerjaiswal900-max/clawcode-moded/releases/tag/v1.0.0)
 - [Windows build guide](WINDOWS_BUILD.md)
 - [Report an issue](https://github.com/rajveerjaiswal900-max/clawcode-moded/issues)
 - [View repository license](LICENSE)
