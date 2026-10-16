@@ -1,0 +1,49 @@
+name: Audit release APK package ID
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+  schedule:
+    - cron: "30 3 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  audit-release-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download latest release APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          mkdir -p artifacts
+          gh release download --repo "$REPOSITORY" --pattern "clawcode-moded-version.apk" --dir artifacts
+          test -s artifacts/clawcode-moded-version.apk
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android build tools
+        run: sdkmanager "build-tools;35.0.0"
+
+      - name: Verify APK archive and package ID
+        shell: bash
+        run: |
+          set -euo pipefail
+          APK="artifacts/clawcode-moded-version.apk"
+          unzip -t "$APK" | tail -n 2
+          PACKAGE_ID="$(apkanalyzer manifest application-id "$APK")"
+          echo "Detected application ID: $PACKAGE_ID"
+          test "$PACKAGE_ID" = "com.nexora.ai" || {
+            echo "::error::Expected application ID com.nexora.ai, found $PACKAGE_ID"
+            exit 1
+          }
