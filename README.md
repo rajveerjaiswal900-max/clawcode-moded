@@ -20,7 +20,13 @@ An unofficial project page for distributing and documenting the **Clawcode-Moded
 
 Use the SHA-256 value above to verify that your download matches the release asset. A matching checksum confirms file integrity against this published value; it does **not** by itself prove that the APK is safe.
 
-## Install
+## Windows PC version
+
+A native Windows `.exe` is **not available yet**. The repository currently contains the APK and documentation, but not the app source code needed to build a Windows version. An Android APK cannot be directly converted into a native Windows executable.
+
+See the [Windows build requirements and release plan](WINDOWS_BUILD.md). To proceed, provide the original source-code repository or complete source project, plus the applicable license/redistribution permissions. Once the technology stack is identified, a suitable Windows build and GitHub Actions workflow can be prepared. An Android emulator is an alternative for running an APK on a PC, but it is not a native Windows build.
+
+## Install Android preview
 
 1. Open the [release page](https://github.com/rajveerjaiswal900-max/clawcode-moded/releases/tag/v1.0.0) on your Android device.
 2. Download `clawcode-moded-version.apk` from the release assets.
@@ -42,6 +48,7 @@ This is an initial preview release. Bugs, incomplete behavior, or device-specifi
 
 ## Links
 
-- [Download current preview](https://github.com/rajveerjaiswal900-max/clawcode-moded/releases/tag/v1.0.0)
+- [Download current Android preview](https://github.com/rajveerjaiswal900-max/clawcode-moded/releases/tag/v1.0.0)
+- [Windows build guide](WINDOWS_BUILD.md)
 - [Report an issue](https://github.com/rajveerjaiswal900-max/clawcode-moded/issues)
 - [View repository license](LICENSE)
